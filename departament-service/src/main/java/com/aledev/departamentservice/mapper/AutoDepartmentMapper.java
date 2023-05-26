@@ -10,7 +10,8 @@ public interface AutoDepartmentMapper {
 
 
     AutoDepartmentMapper MAPPER = Mappers.getMapper(AutoDepartmentMapper.class);
+
     DepartmentDto mapToDepartmentDto(Department department);
 
-        Department mapToDepartment(DepartmentDto departmentDto);
+    Department mapToDepartment(DepartmentDto departmentDto);
 }

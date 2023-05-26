@@ -33,5 +33,6 @@ public class EmployeeDto {
     @Email(message = "Email address should not be valid.")
     @NotEmpty(message = "Employee Email should not be null or empty.")
     private String email;
+    private String departmentCode;
 }
 

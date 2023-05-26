@@ -34,30 +34,17 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public DepartmentDto findById(Long id) {
-        Department userExist = departmentReository.findById(id)
-                .orElseThrow(
-                        () -> new ResourceNotFoundException("Depatment", "id", id));
+    public DepartmentDto getDepartment(String department) {
+        Department userExist = departmentReository.findByDepartmentCode(department).orElseThrow();
         return AutoDepartmentMapper.MAPPER.mapToDepartmentDto(userExist);
     }
 
     @Override
-    public List<DepartmentDto> findAllDepartment() {
+    public List<DepartmentDto> findAllDepartments() {
         List<Department> allDepartment = departmentReository.findAll();
         return allDepartment.stream()
                 .map(AutoDepartmentMapper.MAPPER::mapToDepartmentDto)
                 .collect(Collectors.toList());
     }
 
-    @Override
-    public DepartmentDto updateDepartment(Long id, DepartmentDto department) {
-        Department userExisting = departmentReository.findById(id)
-                .orElseThrow(
-                        () -> new ResourceNotFoundException("Department", "id", id));
-        userExisting.setDepartmentName(department.getDepartmentName());
-        userExisting.setDepartmentDescription(department.getDepartmentDescription());
-        userExisting.setDepartmentCode(department.getDepartmentCode());
-        Department departmentUpdate = departmentReository.save(userExisting);
-        return AutoDepartmentMapper.MAPPER.mapToDepartmentDto(departmentUpdate);
-    }
 }

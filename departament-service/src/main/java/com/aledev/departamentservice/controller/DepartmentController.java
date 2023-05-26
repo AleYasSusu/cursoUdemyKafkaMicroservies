@@ -21,23 +21,10 @@ public class DepartmentController {
         return new ResponseEntity<>(userSaved, HttpStatus.CREATED);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<DepartmentDto> findById(@PathVariable("id") Long userId) {
-        DepartmentDto userDto = departmentService.findById(userId);
+    @GetMapping("/{department-code}")
+    public ResponseEntity<DepartmentDto> getDepartment(@PathVariable("department-code") String department) {
+        DepartmentDto userDto = departmentService.getDepartment(department);
         return new ResponseEntity<>(userDto, HttpStatus.OK);
     }
 
-
-    @GetMapping
-    public ResponseEntity<List<DepartmentDto>> findAll() {
-        List<DepartmentDto> alUser = departmentService.findAllDepartment();
-        return new ResponseEntity<>(alUser, HttpStatus.OK);
-    }
-
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Void> updateUser(@PathVariable("id") Long userId, @Valid @RequestBody DepartmentDto user) {
-        departmentService.updateDepartment(userId, user);
-        return ResponseEntity.noContent().build();
-    }
 }

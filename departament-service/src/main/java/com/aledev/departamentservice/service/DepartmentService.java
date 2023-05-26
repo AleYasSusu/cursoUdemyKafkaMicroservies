@@ -7,10 +7,9 @@ import java.util.List;
 public interface DepartmentService {
 
     DepartmentDto createNewDepartment(DepartmentDto departmentDto);
+    
+    DepartmentDto getDepartment(String department);
 
-    DepartmentDto findById(Long id);
 
-    List<DepartmentDto> findAllDepartment();
-
-    DepartmentDto updateDepartment(Long id, DepartmentDto department);
+    List<DepartmentDto> findAllDepartments();
 }
