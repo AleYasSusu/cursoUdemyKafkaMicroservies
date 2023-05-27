@@ -7,8 +7,6 @@ Nemployee-service/src/main/java/com/aledev/employeeservice/entity/Employee.java
 Xemployee-service/src/main/java/com/aledev/employeeservice/mapper/AutoEmployeeMapper.java,b/e/beb0db43b835bf0f3f94687e9f6ffff20f085efb
 Ä
 Pemployee-service/src/main/java/com/aledev/employeeservice/dto/DepartmentDto.java,f/4/f4672099cfc46cd7ecac01f48fe68b8e9304302c
-Ü
-Vemployee-service/src/main/java/com/aledev/employeeservice/client/DepartmentClient.java,f/a/faafb6f9ec228d96cffa5f8ce1e367a32405b316
 å
 \employee-service/src/main/java/com/aledev/employeeservice/repository/EmployeeReporitory.java,b/1/b123469f332257714b42dfac9a84ef99187cf118
 Å
