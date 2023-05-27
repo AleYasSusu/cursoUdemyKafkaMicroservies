@@ -8,11 +8,12 @@
         <option value="$PROJECT_DIR$/departament-service/pom.xml" />
         <option value="$PROJECT_DIR$/service-registry/pom.xml" />
         <option value="$PROJECT_DIR$/service-regitry/pom.xml" />
+        <option value="$PROJECT_DIR$/service-registry/pow.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/service-registry/pom.xml" />
+        <option value="$PROJECT_DIR$/service-registry/pow.xml" />
       </set>
     </option>
   </component>
