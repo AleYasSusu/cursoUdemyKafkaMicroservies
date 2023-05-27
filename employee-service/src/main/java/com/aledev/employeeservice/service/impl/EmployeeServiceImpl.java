@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class EmployeeServiceimpl implements EmployeeService {
+public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeReporitory employeeReporitory;
     private final DepartmentClient departmentClient;
@@ -29,7 +29,7 @@ public class EmployeeServiceimpl implements EmployeeService {
         Optional<Employee> optionalUser = employeeReporitory.findById(
                 employeeDto.getId());
         if (optionalUser.isPresent()) {
-            throw new EmployeeNotFoundException("Empĺoyee with id ja cadastradao");
+            throw new EmployeeNotFoundException("Employee with id ja castration");
         }
 
         Employee user = AutoEmployeeMapper.MAPPER.mapToEmployee(employeeDto);
@@ -41,7 +41,7 @@ public class EmployeeServiceimpl implements EmployeeService {
     public APIResponseDto findById(Long idEmployee) {
         Employee employeeExist = employeeReporitory.findById(idEmployee)
                 .orElseThrow(
-                        () -> new ResourceNotFoundException("User", "id", idEmployee));
+                        () -> new ResourceNotFoundException("Employee", "id", idEmployee));
         DepartmentDto departmentDto = departmentClient.getDepartment(employeeExist.getDepartmentCode());
         APIResponseDto apiResponseDto = new APIResponseDto();
         apiResponseDto.setEmployee(AutoEmployeeMapper.MAPPER.mapToEmployeetDto(employeeExist));
@@ -62,7 +62,7 @@ public class EmployeeServiceimpl implements EmployeeService {
     public EmployeeDto updateUser(Long id, EmployeeDto employeeDto) {
         Employee employeeExisting = employeeReporitory.findById(id)
                 .orElseThrow(
-                        () -> new ResourceNotFoundException("User", "id", id));
+                        () -> new ResourceNotFoundException("Employee", "id", id));
         employeeExisting.setFirsName(employeeDto.getFirsName());
         employeeExisting.setLastName(employeeDto.getLastName());
         employeeExisting.setEmail(employeeDto.getEmail());
