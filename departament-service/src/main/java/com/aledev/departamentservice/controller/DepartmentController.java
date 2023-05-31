@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 
 @RestController
@@ -25,6 +26,13 @@ public class DepartmentController {
     public ResponseEntity<DepartmentDto> getDepartment(@PathVariable("department-code") String department) {
         DepartmentDto departmentDto = departmentService.getDepartment(department);
         return new ResponseEntity<>(departmentDto, HttpStatus.OK);
+    }
+
+
+    @GetMapping
+    public ResponseEntity<List<DepartmentDto>> findAll() {
+        List<DepartmentDto> allDepartment = departmentService.findAllDepartments();
+        return new ResponseEntity<>(allDepartment, HttpStatus.OK);
     }
 
 }
